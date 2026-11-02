@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="JalRakshak — a smart public tap water-wastage prevention device." />
+  <title>JalRakshak — Every drop, defended.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="JalRakshak home">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span>JalRakshak<sup>®</sup></span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="#system">The system</a>
+      <a href="#impact">Impact</a>
+      <a href="#future">Future</a>
+    </nav>
+    <a class="header-cta" href="#system"><span></span>Explore prototype</a>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <canvas id="flow-canvas" aria-hidden="true"></canvas>
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="orb orb-one" aria-hidden="true"></div>
+      <div class="orb orb-two" aria-hidden="true"></div>
+      <p class="eyebrow reveal"><span class="pulse-dot"></span> A water-conscious hardware concept</p>
+      <p class="project-by reveal">CONCEIVED BY <strong>DIVYANSH DHIMAN</strong> <span>✦</span> CSE 111 / LPU</p>
+      <h1 id="hero-title" class="hero-title" aria-label="Every drop, defended.">
+        <span class="line line-one reveal">Every drop,</span>
+        <span class="line line-two reveal">defended<span class="period">.</span></span>
+      </h1>
+      <p class="hero-copy reveal">JalRakshak senses a tap left running, then makes the invisible impossible to ignore.</p>
+      <div class="hero-actions reveal">
+        <a class="primary-button magnetic" href="#system">See how it protects <b>↓</b></a>
+        <button class="sound-toggle" type="button" aria-pressed="false"><span class="sound-icon">◌</span> Ambient mode</button>
+      </div>
+      <div class="hero-status reveal">
+        <span>01 / Student prototype / Divyansh Dhiman</span>
+        <span>SCROLL TO FLOW <i>↓</i></span>
+      </div>
+
+      <div class="water-device" aria-hidden="true">
+        <div class="device-ring ring-a"></div><div class="device-ring ring-b"></div>
+        <div class="measure measure-1">FLOW<br><b>ACTIVE</b></div>
+        <div class="measure measure-2">∆t<br><b>00:42</b></div>
+        <svg class="tap-illustration" viewBox="0 0 560 530" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="metal" x1="90" y1="55" x2="440" y2="420" gradientUnits="userSpaceOnUse"><stop stop-color="#F7FCFA"/><stop offset=".25" stop-color="#9FAEAD"/><stop offset=".54" stop-color="#F4FAF7"/><stop offset="1" stop-color="#778484"/></linearGradient>
+            <linearGradient id="water" x1="280" y1="290" x2="280" y2="500" gradientUnits="userSpaceOnUse"><stop stop-color="#B1FFF3" stop-opacity=".9"/><stop offset="1" stop-color="#58C9D5" stop-opacity="0"/></linearGradient>
+            <filter id="glow"><feGaussianBlur stdDeviation="10" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          </defs>
+          <path d="M146 231V161C146 96 196 56 264 56h32c63 0 102 34 102 90v73" stroke="url(#metal)" stroke-width="68" stroke-linecap="round"/>
+          <path d="M394 188h-114c-55 0-99 38-99 88v15" stroke="url(#metal)" stroke-width="68" stroke-linecap="round"/>
+          <path d="M181 290v21c0 22 18 40 40 40h84c24 0 43-19 43-43v-46" stroke="url(#metal)" stroke-width="68" stroke-linecap="round"/>
+          <path d="M350 335v37c0 16-13 29-29 29h-38c-16 0-29-13-29-29v-24" stroke="#404E50" stroke-width="12" stroke-linecap="round"/>
+          <rect x="204" y="326" width="146" height="92" rx="24" fill="#10292B" stroke="#B6FFF4" stroke-opacity=".8" stroke-width="2"/>
+          <rect x="222" y="344" width="109" height="55" rx="14" fill="#153C3D"/>
+          <circle cx="250" cy="371" r="11" fill="#B6FFF4" filter="url(#glow)"/>
+          <path d="M273 371h39" stroke="#83D9D2" stroke-width="4" stroke-linecap="round"/>
+          <path d="M268 405c0 0 1 53 12 84 7 20 13 28 13 28s7-11 12-28c10-34 9-84 9-84" fill="url(#water)"/>
+          <path class="water-stream" d="M280 415C280 415 272 468 280 506" stroke="#A5FFF3" stroke-width="10" stroke-linecap="round" filter="url(#glow)"/>
+          <circle cx="362" cy="329" r="8" fill="#F1D37E"/><circle cx="383" cy="329" r="8" fill="#F1D37E" opacity=".45"/>
+        </svg>
+        <span class="radar-line"></span>
+      </div>
+    </section>
+
+    <section class="marquee-wrap" aria-label="Key message">
+      <div class="marquee" aria-hidden="true">
+        <span>FLOW MONITORED <i>✦</i> WASTE INTERRUPTED <i>✦</i> FLOW MONITORED <i>✦</i> WASTE INTERRUPTED <i>✦</i></span>
+        <span>FLOW MONITORED <i>✦</i> WASTE INTERRUPTED <i>✦</i> FLOW MONITORED <i>✦</i> WASTE INTERRUPTED <i>✦</i></span>
+      </div>
+    </section>
+
+    <section class="intro section-pad" id="system" aria-labelledby="intro-title">
+      <div class="section-label reveal"><span>01</span> THE PROBLEM</div>
+      <div class="intro-layout">
+        <p class="intro-kicker reveal">A public tap should never become a silent leak.</p>
+        <h2 id="intro-title" class="display-head reveal">One overlooked tap.<br><em>A chain reaction.</em></h2>
+        <div class="intro-text reveal">
+          <p>In busy schools, colleges, parks and community spaces, taps are easily left running. The water keeps moving. No one notices.</p>
+          <p>JalRakshak is a gentle interruption: a compact sensing system that draws attention at exactly the moment it matters.</p>
+          <a href="#workflow" class="text-link">Follow the signal <span>↘</span></a>
+        </div>
+      </div>
+      <div class="stat-rail">
+        <article class="stat-card reveal"><b>01</b><span>Flow detected</span><p>Sensor reads the water in motion.</p></article>
+        <article class="stat-card reveal"><b>02</b><span>Time tracked</span><p>Microcontroller counts every extra second.</p></article>
+        <article class="stat-card reveal"><b>03</b><span>Alert triggered</span><p>Light and sound request attention.</p></article>
+        <article class="stat-card reveal"><b>04</b><span>Waste reduced</span><p>Better habits begin with a signal.</p></article>
+      </div>
+    </section>
+
+    <section class="workflow" id="workflow" aria-labelledby="workflow-title">
+      <div class="workflow-sticky">
+        <div class="workflow-left">
+          <div class="section-label light"><span>02</span> THE RESPONSE</div>
+          <h2 id="workflow-title" class="workflow-title">A small circuit.<br><em>A clear signal.</em></h2>
+          <p class="workflow-lede">Built around a simple idea: measure flow, wait for the threshold, then make waste visible.</p>
+          <div class="progress-steps" aria-hidden="true"><span class="active">01</span><i></i><span>02</span><i></i><span>03</span></div>
+        </div>
+        <div class="workflow-visual" aria-hidden="true">
+          <div class="circuit-board">
+            <div class="pcb-label">JALRAKSHAK // V1.0</div>
+            <span class="trace t1"></span><span class="trace t2"></span><span class="trace t3"></span><span class="trace t4"></span>
+            <div class="node node-flow"><small>INPUT</small><b>FLOW</b><i></i></div>
+            <div class="node node-core"><small>LOGIC</small><b>ARDUINO</b><i></i></div>
+            <div class="node node-alert"><small>OUTPUT</small><b>ALERT</b><i></i></div>
+            <span class="signal signal-one"></span><span class="signal signal-two"></span>
+          </div>
+        </div>
+      </div>
+      <div class="workflow-cards">
+        <article class="step-card step-1" data-step="01"><span class="step-num">01</span><h3>Sense the flow.</h3><p>A water-flow sensor watches the demonstration line and creates a readable pulse.</p><div class="step-icon icon-flow"><i></i><i></i><i></i></div></article>
+        <article class="step-card step-2" data-step="02"><span class="step-num">02</span><h3>Read the pattern.</h3><p>An Arduino-compatible board measures the duration and checks it against a chosen threshold.</p><div class="step-icon icon-core"><i></i></div></article>
+        <article class="step-card step-3" data-step="03"><span class="step-num">03</span><h3>Prompt action.</h3><p>If water keeps running too long, a buzzer and warning LED ask people to respond.</p><div class="step-icon icon-alert"><i></i><i></i><i></i></div></article>
+      </div>
+    </section>
+
+    <section class="components section-pad" aria-labelledby="components-title">
+      <div class="components-head">
+        <div class="section-label reveal"><span>03</span> DESIGNED TO STAY SIMPLE</div>
+        <h2 id="components-title" class="display-head reveal">Less complexity.<br><em>More care.</em></h2>
+        <p class="reveal">A deliberately practical bill of materials keeps JalRakshak affordable, understandable, and buildable by a student team.</p>
+      </div>
+      <div class="bento-grid">
+        <article class="bento bento-arduino reveal"><span class="part-number">01 — CONTROL</span><h3>Arduino<br>compatible</h3><div class="board-art" aria-hidden="true"><i></i><i></i><i></i><i></i><b></b></div><p>Reads the signal and keeps the decision loop running.</p></article>
+        <article class="bento bento-sensor reveal"><span class="part-number">02 — INPUT</span><h3>Water flow<br>sensor</h3><div class="sensor-art" aria-hidden="true"><i></i><i></i><b></b></div><p>Detects movement and helps estimate water use after calibration.</p></article>
+        <article class="bento bento-alert reveal"><span class="part-number">03 — OUTPUT</span><h3>Buzzer + LED</h3><div class="alert-art" aria-hidden="true"><i></i><i></i><i></i><b></b></div><p>An unmissable cue for nearby users or staff.</p></article>
+        <article class="bento bento-display reveal"><span class="part-number">04 — OPTIONAL</span><h3>OLED display</h3><div class="display-art" aria-hidden="true"><small>FLOW TIME</small><b>00:42</b><i>● LIVE</i></div><p>Could make duration and estimated use visible at a glance.</p></article>
+      </div>
+    </section>
+
+    <section class="impact section-pad" id="impact" aria-labelledby="impact-title">
+      <div class="impact-background" aria-hidden="true"><span>H₂O</span><span>H₂O</span><span>H₂O</span></div>
+      <div class="impact-top">
+        <div class="section-label light reveal"><span>04</span> LOCAL ACTION, LASTING VALUE</div>
+        <h2 id="impact-title" class="impact-title reveal">Conservation can<br>start <em>right here.</em></h2>
+      </div>
+      <div class="impact-bottom">
+        <p class="impact-copy reveal">This is an awareness aid — not a promise of automatic savings. But it equips a shared space with a timely cue to act differently.</p>
+        <div class="impact-facts reveal">
+          <div><b>₹500–₹1,000</b><span>Estimated student prototype budget</span></div>
+          <div><b>LOW VOLTAGE</b><span>Safe, controlled demo setup</span></div>
+          <div><b>PUBLIC SPACES</b><span>Schools, parks &amp; community areas</span></div>
+        </div>
+      </div>
+      <div class="impact-waterline" aria-hidden="true"><span></span></div>
+    </section>
+
+    <section class="future section-pad" id="future" aria-labelledby="future-title">
+      <div class="section-label reveal"><span>05</span> READY FOR WHAT’S NEXT</div>
+      <div class="future-layout">
+        <h2 id="future-title" class="display-head reveal">A prototype<br>with <em>headroom.</em></h2>
+        <p class="future-copy reveal">The first version keeps its promise simple. Future iterations could add wireless maintenance alerts, battery health, usage histories, or an engineered shut-off valve—after proper safety testing.</p>
+      </div>
+      <div class="future-orbit reveal" aria-label="Future possibilities">
+        <span class="orbit-center">V1<br><small>NOW</small></span>
+        <span class="orbit-item item-1">USAGE DISPLAY</span>
+        <span class="orbit-item item-2">WIRELESS ALERT</span>
+        <span class="orbit-item item-3">BATTERY HEALTH</span>
+        <span class="orbit-item item-4">SAFE AUTO VALVE</span>
+        <svg viewBox="0 0 700 390" aria-hidden="true"><ellipse cx="350" cy="195" rx="316" ry="145"/><ellipse cx="350" cy="195" rx="195" ry="88"/></svg>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="closing-bg" aria-hidden="true"><span></span><span></span><span></span></div>
+      <p class="eyebrow light reveal"><span class="pulse-dot"></span> CSE 111 • ROBOTICS &amp; AI</p>
+      <h2 class="closing-title reveal">Protect<br>the <em>next</em> drop.</h2>
+      <a href="#top" class="return-link magnetic reveal"><span>Return to surface</span><b>↑</b></a>
+      <footer><span>JALRAKSHAK / WATER, MADE VISIBLE</span><span>DESIGNED BY DIVYANSH DHIMAN © 2026</span></footer>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
